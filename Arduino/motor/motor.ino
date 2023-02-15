@@ -1,4 +1,6 @@
 #include <Servo.h>
+#include <SevSeg.h>
+
 Servo ms;
 int p = 6;
 bool e = false;
