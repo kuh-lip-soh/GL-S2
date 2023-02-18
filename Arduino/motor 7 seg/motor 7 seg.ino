@@ -135,6 +135,7 @@ void number(int v){
 }
 
 }
+
 void mario(){
 tone(beep,660,100);
 delay(150);
@@ -489,7 +490,7 @@ tone(beep,380,100);
 delay(575);
 }
 
-void loop() {
+void loop(){
 
   int L1 = analogRead(A0);
   int L2 = analogRead(A1);
@@ -506,7 +507,7 @@ if (e)
   if(L2<30)
   {
   fermer(-1);
- // delay(1000);
+  //delay(1000);
   }
 }
 else if (s)
@@ -529,8 +530,6 @@ else if(L1<30 && p>0)
 }
 else if(p==0 && L1<30)
 {
-  tone(beep,380,50);
-  tone(beep,380,50);
   tone(beep,380,50);
 }
 
