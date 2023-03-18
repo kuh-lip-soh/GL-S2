@@ -8,6 +8,11 @@ int BtnG = 9;
 int BtnB = 10;
 int BtnW = 11;
 
+bool BtnRState = false;
+bool BtnGState = false;
+bool BtnBState = false;
+bool BtnWState = false;
+
 int beep = 7;
 
 char sequence [10];
@@ -79,16 +84,35 @@ void preview(char sequence[], int j) {
 char input() {
   while(true)
   {
-    delay(250);
   //Serial.println("Waiting input");
-  if(digitalRead(BtnR))
-    return 'R';
-  if(digitalRead(BtnG))  
-    return 'G';
-  if(digitalRead(BtnB))  
-    return 'B';
-  if(digitalRead(BtnW))  
-    return 'W';
+  if(digitalRead(BtnR) && !(BtnRState))
+    {
+      return 'R';
+      BtnRState = true;
+    }
+  if(digitalRead(BtnG) && !(BtnGState))  
+    {
+      return 'G';
+      BtnGState = true;
+    }
+  if(digitalRead(BtnB) && !(BtnBState))  
+    {
+      return 'B';
+      BtnBState = true;
+    }
+  if(digitalRead(BtnW) && !(BtnWState))  
+    {
+      return 'W';
+      BtnWState = true;
+    }
+  if(!(digitalRead(BtnR)) && BtnRState)
+    BtnRState = false;
+  if(!(digitalRead(BtnG)) && BtnGState)
+    BtnGState = false;
+  if(!(digitalRead(BtnB)) && BtnBState)
+    BtnBState = false;
+  if(!(digitalRead(BtnW)) && BtnWState)
+    BtnWState = false;
   }
 }
 
