@@ -36,6 +36,7 @@ figure
    ylabel('Axe2')
    xline(0)
    yline(0)
+   grid("on")
    for i = 1:size(cp,1)
        size(cp, 1);
        a = cp(i, 1);
@@ -50,6 +51,7 @@ figure
    ylabel('Axe2')
    p = nsidedpoly(1000, 'center', [0, 0], 'Radius', 1)
    plot(p, 'FaceColor', 'none')
+   grid("on")
    for i = 1:size(cv, 1)
        a = cv(i, 1);
        b = cv(i, 2);
