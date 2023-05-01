@@ -1,14 +1,32 @@
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class Carnet extends UnicastRemoteObject {
-	private String message;
+public class Carnet extends UnicastRemoteObject implements CarnetInterface {
+    private static final long serialVersionUID = 1L;
+    private Map<String, Adresse> adresses;
+
+    public Carnet() throws RemoteException {
+        super();
+        adresses = new HashMap<String, Adresse>();
+    }
 	
-	protected Carnet(String message) throws RemoteException {
-		this.message = message;
-	}
-	
-	public String say() throws RemoteException {
-		return this.message;
-	}
+	 public void enregistrer(String nom, Adresse adresse) throws RemoteException {
+            adresses.put(nom, adresse);
+        }
+
+        public void effacer(String nom) throws RemoteException {
+            adresses.remove(nom);
+        }
+
+        public Adresse chercher(String nom) throws RemoteException {
+            return adresses.get(nom);
+        }
+
+        public List<Adresse> lister() throws RemoteException {
+            return new ArrayList<Adresse>(adresses.values());
+        }
 }

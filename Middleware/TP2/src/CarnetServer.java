@@ -5,10 +5,10 @@ public class CarnetServer {
 	public static void main(String[] argv) {
 		try {
 			LocateRegistry.createRegistry(1099);
-			Naming.rebind("rmi://localhost:1099/Hello",new Hello("Hello world"));
-			System.out.println("Hello server is ready");
+			Naming.rebind("rmi://localhost:1099/Carnet",new Carnet());
+			System.out.println("Carnet en attente");
 		} 	catch(Exception e) {
-			System.out.println("Hello server is failed");
+			System.out.println("Erreur : "+ e.getMessage());
 		}
 	}
 }
