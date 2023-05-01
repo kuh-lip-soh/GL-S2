@@ -31,8 +31,9 @@ void test () {
   digitalWrite(LED,HIGH);
   delay(100);
   digitalWrite(LED,LOW);
-  tone(Buzzer, 350, 100);
+  tone(Buzzer, 1500, 100);
   }  
+
 void loop() {
   if(Serial.available()){ 
     t = Serial.read();
