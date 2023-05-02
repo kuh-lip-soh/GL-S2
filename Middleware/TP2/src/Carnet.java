@@ -14,19 +14,19 @@ public class Carnet extends UnicastRemoteObject implements CarnetInterface {
         adresses = new HashMap<String, Adresse>();
     }
 	
-	 public void enregistrer(String nom, Adresse adresse) throws RemoteException {
+	 public synchronized void enregistrer(String nom, Adresse adresse) throws RemoteException {
             adresses.put(nom, adresse);
         }
 
-        public void effacer(String nom) throws RemoteException {
+        public synchronized void effacer(String nom) throws RemoteException {
             adresses.remove(nom);
         }
 
-        public Adresse chercher(String nom) throws RemoteException {
+        public synchronized Adresse chercher(String nom) throws RemoteException {
             return adresses.get(nom);
         }
 
-        public List<Adresse> lister() throws RemoteException {
+        public synchronized List<Adresse> lister() throws RemoteException {
             return new ArrayList<Adresse>(adresses.values());
         }
 }

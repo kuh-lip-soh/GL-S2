@@ -2,7 +2,7 @@ import java.rmi.*;
 import java.util.List;
 import java.util.Scanner;
 
-public class CarnetClient {
+public class CarnetClient1 {
 	public static void main(String[] argv) {
 		try {
 			CarnetInterface carnet = (CarnetInterface) Naming.lookup("rmi://localhost:1099/Carnet1");
