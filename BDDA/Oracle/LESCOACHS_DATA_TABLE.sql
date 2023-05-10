@@ -1,0 +1,5 @@
+REM INSERTING into SYSTEM.LESCOACHS
+SET DEFINE OFF;
+Insert into SYSTEM.LESCOACHS (NUMC,NOMC,PRENOMC,DATEN) values ('1','Hasnaoui',SYSTEM.TLISTEPRENOM('Said', 'Madjid'),to_date('13/11/80','DD/MM/RR'));
+Insert into SYSTEM.LESCOACHS (NUMC,NOMC,PRENOMC,DATEN) values ('2','Bousalah',SYSTEM.TLISTEPRENOM('Souhila'),to_date('09/02/90','DD/MM/RR'));
+Insert into SYSTEM.LESCOACHS (NUMC,NOMC,PRENOMC,DATEN) values ('3','Djebbari',SYSTEM.TLISTEPRENOM('Assia'),to_date('15/05/82','DD/MM/RR'));
