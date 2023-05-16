@@ -1,14 +1,13 @@
 package controllers;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
 public class ConnectToDB {
     
     private Connection connection;
-    private String url = "jdbc:mysql://localhost:3306/db?useSSL=false&serverTimezone=Europe/Paris";
+    private String url = "jdbc:mysql://localhost:3306/dbt?useSSL=false&serverTimezone=Europe/Paris";
     private String username = "root";
     private String password = "root";
     

@@ -23,7 +23,7 @@ void setup() {
   ms.write(0);
 }
 
-void ouvrir(int v){
+void ouvrir(int v) {
   ms.write(90);
   if(v==1)
     {e=true;}
@@ -31,16 +31,15 @@ void ouvrir(int v){
     {s=true;}
 }
 
-void fermer(int v){
+void fermer(int v) {
   ms.write(0);
   p=p+v;
   e=false;
   s=false;
 }
 
-void number(int v){
-  switch(v)
-{
+void number(int v) {
+  switch(v) {
   case 0 :
   digitalWrite(2,LOW);
   digitalWrite(3,LOW);
@@ -133,10 +132,9 @@ void number(int v){
   break;
 
 }
-
 }
 
-void mario(){
+void mario() {
 tone(beep,660,100);
 delay(150);
 tone(beep,660,100);
@@ -490,7 +488,7 @@ tone(beep,380,100);
 delay(575);
 }
 
-void loop(){
+void loop() {
 
   int L1 = analogRead(A0);
   int L2 = analogRead(A1);

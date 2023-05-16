@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+        <meta charset=\"UTF-8\">
+        <title>Carnet d'adresses</title>
+        <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        </style>
+        </head>
+        <body>
+        <form action=\"index\" method=\"post\">
+        <div>
+        <h3>Ajouter une adresse</h3>
+        <label>Choisir le carnet :</label>
+        <select name=\"crn\">
+        
+        // Récupérer la liste des carnets depuis la base de données
+        ConnectToDB con = new ConnectToDB();
+        Connection conn = con.getConnection();
+        try {
+            PreparedStatement st2 = conn.prepareStatement("SELECT DISTINCT nom FROM carnet
+            ResultSet r1 = st2.executeQuery();
+            while (r1.next()) {
+                <option>" + r1.getString("nom") + "</option>
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        </select>
+        <label for=\"nom\">Nom :</label>
+        <input type=\"text\" id=\"nom\" name=\"nom\" required>
+        <label for=\"rue\">Rue :</label>
+        <input type=\"text\" id=\"rue\" name=\"rue\" required>
+        <label for=\"ville\">Ville :</label>
+        <input type=\"text\" id=\"ville\" name=\"ville\" required>
+        <br>
+        <input type=\"submit\" value=\"Enregistrer\">
+        </div>
+        </form>
+        </body>
+        </html>
