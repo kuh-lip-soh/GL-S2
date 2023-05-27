@@ -46,7 +46,7 @@ void test() {
 
 void validate() {
   int k = 0;
-  for(k; t[k]!=0; k++) 
+  for(k; t[k]!=0; k++) //length ta3 wish
   if(k>5)
     {
       Vfalse();
@@ -140,7 +140,7 @@ if (digitalRead(btn4) != btnState4) {
 
 if(analogRead(A0)<10) {
   i=0;
-  t[5]=0;
+  Vdelete();
   tone(beep,350,100);
 }
 
