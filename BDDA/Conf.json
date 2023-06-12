@@ -1,0 +1,16 @@
+﻿[{
+   "_id": 1,
+   "Rewiewer": "Natalie Portman",
+   "institution": "Berkley University",
+   "id_article": 23,
+   "note": 15,
+   "résultat": "Accepté"
+},
+{
+   "_id": 2,
+   "Rewiewer": "Mahroussa Iheb",
+   "institution": "Tlemcen University",
+   "id_article": 3,
+   "note": 9,
+   "résultat": "Rejeté"
+}]
